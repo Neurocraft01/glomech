@@ -1,0 +1,143 @@
+.stats {
+  padding: 0 20px;
+  margin-top: -100px;
+  position: relative;
+  z-index: 10;
+}
+
+.statsGrid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.statBox {
+  background: var(--primary);
+  color: white;
+  padding: 48px 24px;
+  border-radius: 24px;
+  text-align: center;
+  border-bottom: 6px solid var(--accent);
+  box-shadow: var(--shadow-lg);
+}
+
+.statBox h2 {
+  font-size: 3rem;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.statBox p {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  opacity: 0.6;
+}
+
+.equipment {
+  padding-top: 120px;
+}
+
+.eqGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.eqItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-offset);
+  padding: 20px 24px;
+  border-radius: 16px;
+  font-weight: 600;
+  border: 1px solid var(--border);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+.quality {
+  background: var(--bg-offset);
+  margin-top: 100px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.qText h2 {
+  font-size: 3rem;
+  margin: 16px 0 24px;
+}
+
+.qList {
+  list-style: none;
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.qList li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+  color: var(--secondary);
+}
+
+.qList li svg {
+  color: var(--accent);
+}
+
+.features {
+  display: grid;
+  gap: 24px;
+}
+
+.fCard {
+  background: white;
+  padding: 32px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.fCard svg {
+  color: var(--accent);
+  width: 32px;
+  height: 32px;
+  margin-bottom: 16px;
+}
+
+.fCard h4 {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+.fCard p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}
