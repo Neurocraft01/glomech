@@ -9,11 +9,7 @@ import styles from './Facilities.module.css';
 
 export default function FacilitiesPage() {
   return (
-    <motion.main
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-    >
+    <main>
       <Navbar />
       <PageHeader 
         title="Our Facilities" 
@@ -104,6 +100,6 @@ export default function FacilitiesPage() {
       </section>
 
       <Footer />
-    </motion.main>
+    </main>
   );
 }

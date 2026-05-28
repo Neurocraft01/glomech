@@ -1,5 +1,7 @@
+/* ── Intro ── */
 .intro {
   padding-bottom: 0;
+  background: var(--bg);
 }
 
 .content {
@@ -12,12 +14,14 @@
 .text h2 {
   font-size: 3rem;
   margin: 16px 0 24px;
+  color: var(--text-dark);
 }
 
 .text p {
   color: var(--text-muted);
   margin-bottom: 20px;
   font-size: 1.1rem;
+  line-height: 1.75;
 }
 
 .missionVision {
@@ -27,14 +31,21 @@
 }
 
 .card {
-  background: var(--bg-offset);
-  padding: 40px;
+  background: var(--bg-card);
+  padding: 36px;
   border-radius: 24px;
   border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.card:hover {
+  border-color: var(--border-dark);
+  box-shadow: var(--shadow);
 }
 
 .icon {
-  color: var(--accent);
+  color: var(--brand-mid);
   margin-bottom: 20px;
   width: 40px;
   height: 40px;
@@ -42,59 +53,222 @@
 
 .card h3 {
   margin-bottom: 12px;
+  color: var(--text-dark);
 }
 
 .card p {
   color: var(--text-muted);
   font-size: 0.95rem;
+  line-height: 1.7;
 }
 
-.teamSection {
-  background: var(--primary);
-  color: white;
-  margin-top: 80px;
+/* ── Leadership Section ── */
+.leadershipSection {
+  position: relative;
+  padding: 0;
+  max-width: 100%;
+  overflow: hidden;
 }
 
-.teamGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
-  max-width: 900px;
+.leadershipBg {
+  position: absolute;
+  inset: 0;
+  background-image: url('/hero.png');
+  background-size: cover;
+  background-position: center 40%;
+  z-index: 0;
+}
+
+.leadershipOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(43, 26, 14, 0.97) 0%,
+    rgba(43, 26, 14, 0.92) 60%,
+    rgba(43, 26, 14, 0.95) 100%
+  );
+  z-index: 1;
+}
+
+.leadershipInner {
+  position: relative;
+  z-index: 2;
+  max-width: 1280px;
   margin: 0 auto;
+  padding: 100px 24px;
 }
 
-.teamItem {
+.leadershipHeader {
   text-align: center;
-  padding: 40px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 72px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.iconWrapper {
-  width: 64px;
-  height: 64px;
-  background: var(--accent);
-  color: var(--primary);
+.leadershipHeader h2 {
+  font-size: 3rem;
+  color: white;
+  margin: 16px 0 20px;
+  line-height: 1.15;
+}
+
+.leadershipSubtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-style: italic;
+  background: linear-gradient(135deg, #D4870A 0%, #F0A500 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 20px;
+}
+
+.leadershipDesc {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ── Director Cards ── */
+.directorsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.directorCard {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(212, 135, 10, 0.22);
+  border-radius: 28px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  backdrop-filter: blur(8px);
+  transition: var(--transition);
+}
+
+.directorCard:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(212, 135, 10, 0.4);
+  box-shadow: 0 20px 48px rgba(43,26,14,0.4);
+}
+
+/* Avatar circle */
+.directorAvatar {
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
+  background: linear-gradient(135deg, #7A4A0A 0%, #D4870A 50%, #F0A500 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 24px;
+  box-shadow: 0 8px 24px rgba(212,135,10,0.35);
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid rgba(212,135,10,0.5);
 }
 
-.teamItem h4 {
-  font-size: 1.25rem;
+.directorMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.directorMeta h3 {
+  font-size: 1.5rem;
+  color: white;
+  margin: 0;
+}
+
+.directorRole {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: linear-gradient(135deg, #D4870A 0%, #F0A500 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.directorCredentials {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+  line-height: 1.5;
+  margin-top: 4px;
+}
+
+/* Message block */
+.directorMessage {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 18px;
+  padding: 28px;
+  border: 1px solid rgba(255,255,255,0.08);
+  position: relative;
+}
+
+.quoteIcon {
+  color: var(--brand-accent);
+  opacity: 0.6;
   margin-bottom: 12px;
+  display: block;
 }
 
-.teamItem p {
-  opacity: 0.7;
+.directorMessage p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin: 0;
 }
 
+/* Tagline */
+.directorTagline {
+  padding: 16px 20px;
+  background: rgba(212, 135, 10, 0.12);
+  border-radius: 12px;
+  border-left: 3px solid var(--brand-accent);
+}
+
+.directorTagline span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--brand-light);
+  line-height: 1.5;
+}
+
+/* ── Responsive ── */
 @media (max-width: 1024px) {
   .content {
     grid-template-columns: 1fr;
     gap: 60px;
+  }
+
+  .directorsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .leadershipHeader h2 {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .leadershipInner {
+    padding: 70px 20px;
+  }
+
+  .directorCard {
+    padding: 28px;
+  }
+
+  .leadershipHeader h2 {
+    font-size: 2rem;
   }
 }

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { companyInfo } from '@/data/company';
 import styles from './Footer.module.css';
 
@@ -16,8 +17,13 @@ export default function Footer() {
       <div className={styles.top}>
         <div className={styles.brand}>
           <div className={styles.logo}>
-            <span className={styles.logoMark}>G</span>
-            <span className={styles.logoText}>LOMECH</span>
+            <Image
+              src="/logo.png"
+              alt="Glomech Engineering Logo"
+              width={224}
+              height={70}
+              className={styles.logoImg}
+            />
           </div>
           <p className={styles.brandDesc}>
             {companyInfo.tagline}
@@ -49,9 +55,15 @@ export default function Footer() {
           </div>
 
           <div className={styles.col}>
-            <h5>Location</h5>
+            <h5>Office Address</h5>
+            <p className={styles.addrLabel}>Chikhali, Pune</p>
+            <p className={styles.addr}>{companyInfo.address.office}</p>
+          </div>
+
+          <div className={styles.col}>
+            <h5>Factory Address</h5>
+            <p className={styles.addrLabel}>Talawade, Pune</p>
             <p className={styles.addr}>{companyInfo.address.factory}</p>
-            <p className={styles.addrOffice}>{companyInfo.address.office}</p>
           </div>
         </div>
       </div>

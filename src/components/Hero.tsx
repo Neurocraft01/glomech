@@ -1,21 +1,22 @@
 'use client';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowRight, Star, TrendingUp, Shield } from 'lucide-react';
 import { companyInfo } from '@/data/company';
-import { useRef } from 'react';
 import styles from './Hero.module.css';
 
 export default function Hero() {
-  const ref = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
-  const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
-
   return (
-    <section ref={ref} className={styles.hero}>
-      {/* Parallax background */}
-      <motion.div className={styles.bg} style={{ y }} />
+    <section className={styles.hero}>
+      {/* Video background */}
+      <video
+        className={styles.videoBg}
+        src="/hero.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
 
       {/* Gradient overlays */}
       <div className={styles.gradientTop} />
@@ -27,7 +28,7 @@ export default function Hero() {
       {/* Animated grid lines */}
       <div className={styles.grid} />
 
-      <motion.div className={styles.content} style={{ opacity }}>
+      <motion.div className={styles.content}>
         {/* Top pill badges */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}

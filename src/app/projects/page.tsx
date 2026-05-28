@@ -9,11 +9,7 @@ import styles from './Projects.module.css';
 
 export default function ProjectsPage() {
   return (
-    <motion.main
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-    >
+    <main>
       <Navbar />
       <PageHeader 
         title="Our Projects" 
@@ -70,6 +66,6 @@ export default function ProjectsPage() {
       </section>
 
       <Footer />
-    </motion.main>
+    </main>
   );
 }

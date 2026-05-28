@@ -39,7 +39,8 @@ export const companyInfo = {
     "Safety Ladders & Walkways"
   ],
   services: [
-    "Manufacturing as Per Drawings",
+    "Manufacturing as per Fabrication Drawing",
+    "Manufacturing based on GA Drawing",
     "Blasting & Painting",
     "Galvanizing",
     "Powder Coating",
@@ -47,8 +48,8 @@ export const companyInfo = {
     "Third-Party Quality Assurance"
   ],
   facilities: [
-    "4 MIG Welding Machines",
-    "3 Electric Arc Welding Machines",
+    "6 MIG Welding Machines",
+    "4 Electric Arc Welding Machines",
     "PUG & Broach Cutters",
     "13 M.T. Hydra Crane",
     "Blasting & Painting Units",

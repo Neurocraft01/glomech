@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Phone } from 'lucide-react';
 import styles from './Navbar.module.css';
@@ -33,8 +34,14 @@ export default function Navbar() {
     <nav className={`${styles.nav} ${scrolled || !isHome ? styles.solid : ''} ${isOpen ? styles.menuOpen : ''}`}>
       <div className={styles.inner}>
         <Link href="/" className={styles.logo}>
-          <span className={styles.logoMark}>G</span>
-          <span className={styles.logoText}>LOMECH</span>
+          <Image
+            src="/logo.png"
+            alt="Glomech Engineering Logo"
+            width={180}
+            height={56}
+            className={styles.logoImg}
+            priority
+          />
         </Link>
 
         <div className={styles.links}>

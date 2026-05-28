@@ -1,5 +1,5 @@
 .contact {
-  background: white;
+  background: var(--bg);
 }
 
 .container {
@@ -34,7 +34,7 @@
   width: 48px;
   height: 48px;
   background: var(--bg-offset);
-  color: var(--primary);
+  color: var(--brand-mid);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -94,8 +94,8 @@
 .formGroup select:focus,
 .formGroup textarea:focus {
   outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.1);
+  border-color: var(--brand-mid);
+  box-shadow: 0 0 0 4px rgba(212, 135, 10, 0.12);
 }
 
 @media (max-width: 1024px) {

@@ -3,9 +3,10 @@
   grid-template-columns: 420px 1fr;
   gap: 100px;
   align-items: start;
-  background: var(--bg-offset);
+  background: var(--bg-card);
   border-radius: 32px;
   padding: 80px;
+  border: 1px solid var(--border);
   /* override section defaults */
   max-width: 1280px;
   margin: 0 auto 0;
@@ -19,7 +20,7 @@
 .title {
   font-size: 2.6rem;
   line-height: 1.15;
-  color: var(--primary);
+  color: var(--text-dark);
   margin-bottom: 20px;
   letter-spacing: -0.025em;
 }
@@ -71,7 +72,7 @@
   font-family: 'Barlow Condensed', 'Outfit', sans-serif;
   font-size: 1rem;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--brand-mid);
   letter-spacing: 0.05em;
   flex-shrink: 0;
 }
@@ -106,16 +107,16 @@
 }
 
 .item:hover .iconWrap {
-  background: var(--primary);
-  color: var(--accent);
-  border-color: var(--primary);
+  background: var(--brand-dark);
+  color: var(--brand-accent);
+  border-color: var(--brand-dark);
   transform: scale(1.05);
 }
 
 .itemTitle {
   font-size: 1.15rem;
   font-weight: 700;
-  color: var(--primary);
+  color: var(--text-dark);
   margin-bottom: 8px;
   font-family: 'Outfit', sans-serif;
   letter-spacing: -0.01em;

@@ -14,7 +14,7 @@
   font-size: 2.6rem;
   line-height: 1.15;
   letter-spacing: -0.025em;
-  color: var(--primary);
+  color: var(--text-dark);
   margin: 12px 0 20px;
 }
 
@@ -48,15 +48,15 @@
 }
 
 .eqItem:hover {
-  border-color: var(--accent);
-  background: rgba(245, 158, 11, 0.04);
+  border-color: var(--brand-mid);
+  background: rgba(212, 135, 10, 0.06);
 }
 
 .dot {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--brand-mid), var(--brand-accent));
   flex-shrink: 0;
 }
 
@@ -73,7 +73,7 @@
   flex-direction: column;
   gap: 4px;
   padding: 20px;
-  background: var(--primary);
+  background: var(--brand-dark);
   border-radius: 14px;
 }
 
@@ -81,7 +81,10 @@
   font-family: 'Outfit', sans-serif;
   font-size: 1.3rem;
   font-weight: 800;
-  color: var(--accent);
+  background: linear-gradient(135deg, #D4870A 0%, #F0A500 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   letter-spacing: -0.02em;
 }
 

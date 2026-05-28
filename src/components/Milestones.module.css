@@ -1,5 +1,5 @@
 .wrapper {
-  background: var(--primary);
+  background: var(--brand-dark);
   padding: 100px 0;
   overflow: hidden;
 }
@@ -17,14 +17,14 @@
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.25);
+  color: rgba(250, 157, 26, 0.25);
 }
 
 /* ── Parallax headline ── */
 .headlineTrack {
   overflow: hidden;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid rgba(242, 185, 12, 0.06);
+  border-bottom: 1px solid rgba(239, 163, 11, 0.06);
   padding: 20px 0;
   margin-bottom: 80px;
 }
@@ -73,11 +73,11 @@
 }
 
 .card:hover {
-  background: var(--primary-light);
+  background: var(--primary-mid);
 }
 
 .card:hover::before {
-  background: var(--accent);
+  background: linear-gradient(90deg, var(--brand-mid), var(--brand-accent));
 }
 
 .cardTop {
@@ -98,9 +98,9 @@
   width: 32px;
   height: 32px;
   border-radius: 8px;
-  background: rgba(245, 158, 11, 0.15);
-  border: 1px solid rgba(245, 158, 11, 0.3);
-  color: var(--accent);
+  background: rgba(240, 165, 0, 0.15);
+  border: 1px solid rgba(240, 165, 0, 0.3);
+  color: var(--brand-accent);
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.05em;
@@ -133,7 +133,10 @@
   font-family: 'Outfit', sans-serif;
   font-size: 1.4rem;
   font-weight: 800;
-  color: var(--accent);
+  background: linear-gradient(135deg, #D4870A 0%, #F0A500 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   line-height: 1;
 }
 

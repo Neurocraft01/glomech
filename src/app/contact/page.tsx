@@ -9,11 +9,7 @@ import styles from './Contact.module.css';
 
 export default function ContactPage() {
   return (
-    <motion.main
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5 }}
-    >
+    <main>
       <Navbar />
       <PageHeader 
         title="Contact Us" 
@@ -112,6 +108,6 @@ export default function ContactPage() {
       </section>
 
       <Footer />
-    </motion.main>
+    </main>
   );
 }

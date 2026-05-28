@@ -44,11 +44,6 @@ export default function Milestones() {
                 <span className={styles.mLabel}>Production</span>
                 <span className={styles.mValue}>{item.production}</span>
               </div>
-              <div className={styles.metricDivider} />
-              <div className={styles.metric}>
-                <span className={styles.mLabel}>Turnover</span>
-                <span className={styles.mValue}>{item.turnover}</span>
-              </div>
             </div>
             <p className={styles.details}>{item.details}</p>
           </motion.div>

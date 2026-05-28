@@ -1,27 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800;900&family=Barlow+Condensed:wght@400;600;700;800&display=swap');
 
 :root {
-  --primary: #09101e;
-  --primary-light: #162033;
-  --primary-mid: #1e2d45;
-  --accent: #f59e0b;
-  --accent-dark: #d97706;
-  --accent-glow: rgba(245, 158, 11, 0.25);
-  --steel: #334155;
-  --steel-light: #475569;
-  --bg: #ffffff;
-  --bg-offset: #f1f5f9;
-  --bg-deep: #e8edf5;
-  --text: #09101e;
-  --text-muted: #64748b;
-  --border: #dde3ee;
-  --radius: 14px;
+  /* ── Core brand palette ── */
+  --brand-dark:    #2B1A0E;   /* dark brown – navbar strip */
+  --brand-deep:    #7A4A0A;   /* rich amber-brown deep */
+  --brand-mid:     #D4870A;   /* amber-brown mid */
+  --brand-accent:  #F0A500;   /* bright amber accent */
+  --brand-light:   #FCC842;   /* light amber highlight */
+
+  /* ── Background tones ── */
+  --bg:            #F5EDE4;   /* warm beige – hero/page background */
+  --bg-offset:     #EEE0D3;   /* slightly darker beige */
+  --bg-card:       #FDF7F1;   /* near-white warm card */
+
+  /* ── Text ── */
+  --text:          #1A0D05;   /* near-black warm */
+  --text-dark:     #2B1A0E;   /* dark brown text */
+  --text-muted:    #6B4F35;   /* warm brown muted */
+  --text-light:    #9A7A5A;   /* lighter muted */
+
+  /* ── Borders ── */
+  --border:        #D9C5AE;   /* warm beige border */
+  --border-dark:   #B8956E;   /* amber-toned border */
+
+  /* ── Aliases for legacy usage ── */
+  --primary:       #2B1A0E;
+  --primary-light: #3D2615;
+  --primary-mid:   #5C3518;
+  --accent:        #F0A500;
+  --accent-dark:   #D4870A;
+  --accent-glow:   rgba(240, 165, 0, 0.25);
+  --steel:         #6B4F35;
+  --steel-light:   #9A7A5A;
+
+  /* ── Radius ── */
+  --radius:    14px;
   --radius-lg: 24px;
+
+  /* ── Transitions & shadows ── */
   --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
-  --shadow: 0 4px 16px rgba(9,16,30,0.08), 0 2px 4px rgba(9,16,30,0.04);
-  --shadow-lg: 0 20px 40px rgba(9,16,30,0.12), 0 8px 16px rgba(9,16,30,0.06);
-  --shadow-xl: 0 40px 80px rgba(9,16,30,0.18), 0 16px 32px rgba(9,16,30,0.1);
+  --shadow-sm:  0 1px 3px rgba(43,26,14,0.08), 0 1px 2px rgba(43,26,14,0.04);
+  --shadow:     0 4px 16px rgba(43,26,14,0.1), 0 2px 4px rgba(43,26,14,0.05);
+  --shadow-lg:  0 20px 40px rgba(43,26,14,0.14), 0 8px 16px rgba(43,26,14,0.08);
+  --shadow-xl:  0 40px 80px rgba(43,26,14,0.2), 0 16px 32px rgba(43,26,14,0.12);
 }
 
 * {
@@ -87,7 +108,7 @@ section {
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--brand-mid);
   margin-bottom: 16px;
 }
 
@@ -96,16 +117,16 @@ section {
   display: block;
   width: 28px;
   height: 2px;
-  background: var(--accent);
+  background: var(--brand-mid);
   border-radius: 2px;
 }
 
 .badge {
   display: inline-block;
   padding: 5px 14px;
-  background: var(--accent-glow);
-  color: var(--accent-dark);
-  border: 1px solid rgba(245,158,11,0.3);
+  background: rgba(240, 165, 0, 0.15);
+  color: var(--brand-deep);
+  border: 1px solid rgba(212, 135, 10, 0.35);
   font-weight: 700;
   font-size: 11px;
   border-radius: 30px;
@@ -117,8 +138,8 @@ section {
   display: inline-block;
   padding: 5px 14px;
   background: rgba(255,255,255,0.08);
-  color: var(--accent);
-  border: 1px solid rgba(245,158,11,0.25);
+  color: var(--brand-accent);
+  border: 1px solid rgba(240,165,0,0.25);
   font-weight: 700;
   font-size: 11px;
   border-radius: 30px;
@@ -127,7 +148,7 @@ section {
 }
 
 .btn-primary {
-  background: var(--primary);
+  background: var(--brand-dark);
   color: white;
   padding: 14px 28px;
   border-radius: var(--radius);
@@ -141,14 +162,14 @@ section {
 }
 
 .btn-primary:hover {
-  background: var(--primary-light);
+  background: var(--primary-mid);
   transform: translateY(-3px);
   box-shadow: var(--shadow-lg);
 }
 
 .btn-accent {
-  background: var(--accent);
-  color: var(--primary);
+  background: linear-gradient(135deg, var(--brand-mid) 0%, var(--brand-accent) 100%);
+  color: white;
   padding: 14px 28px;
   border-radius: var(--radius);
   font-weight: 700;
@@ -158,12 +179,13 @@ section {
   align-items: center;
   gap: 10px;
   letter-spacing: 0.01em;
+  box-shadow: 0 4px 16px rgba(212,135,10,0.3);
 }
 
 .btn-accent:hover {
-  background: var(--accent-dark);
+  background: linear-gradient(135deg, var(--brand-deep) 0%, var(--brand-mid) 100%);
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px var(--accent-glow);
+  box-shadow: 0 12px 30px rgba(212,135,10,0.4);
 }
 
 .btn-outline {
@@ -173,7 +195,7 @@ section {
   border-radius: var(--radius);
   font-weight: 700;
   font-size: 0.9rem;
-  border: 1.5px solid rgba(255,255,255,0.3);
+  border: 1.5px solid rgba(255,255,255,0.35);
   transition: var(--transition);
   display: inline-flex;
   align-items: center;
@@ -181,9 +203,9 @@ section {
 }
 
 .btn-outline:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: rgba(245,158,11,0.05);
+  border-color: var(--brand-accent);
+  color: var(--brand-accent);
+  background: rgba(240,165,0,0.08);
 }
 
 .section-header {
@@ -194,7 +216,7 @@ section {
 .section-header h2 {
   font-size: 3rem;
   margin-bottom: 16px;
-  color: var(--primary);
+  color: var(--text-dark);
 }
 
 .section-header p {
@@ -214,7 +236,7 @@ section {
 .section-title h2 {
   font-size: 2.75rem;
   margin-bottom: 16px;
-  color: var(--primary);
+  color: var(--text-dark);
 }
 
 .section-title p {

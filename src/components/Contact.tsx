@@ -51,11 +51,11 @@ export default function Contact() {
           <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
             <div className={styles.formGroup}>
               <label>Full Name</label>
-              <input type="text" placeholder="John Doe" />
+              <input type="text" placeholder="Your Name" />
             </div>
             <div className={styles.formGroup}>
               <label>Email Address</label>
-              <input type="email" placeholder="john@example.com" />
+              <input type="email" placeholder="Your Email" />
             </div>
             <div className={styles.formGroup}>
               <label>Project Type</label>
