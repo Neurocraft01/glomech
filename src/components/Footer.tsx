@@ -52,6 +52,9 @@ export default function Footer() {
             <a href={`mailto:${companyInfo.contact.email}`} className={styles.email}>
               {companyInfo.contact.email}
             </a>
+            <a href="mailto:info@glomech.in" className={styles.email}>
+              info@glomech.in
+            </a>
           </div>
 
           <div className={styles.col}>

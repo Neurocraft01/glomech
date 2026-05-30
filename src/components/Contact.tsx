@@ -65,6 +65,7 @@ export default function Contact() {
               <div>
                 <h4>Email Us</h4>
                 <p>{companyInfo.contact.email}</p>
+                <p>info@glomech.in</p>
               </div>
             </div>
             <div className={styles.detailItem}>

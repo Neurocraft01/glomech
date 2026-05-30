@@ -71,7 +71,7 @@ export default function Facilities() {
             <div className={styles.imgOverlay} />
           </div>
           <div className={styles.imgSub}>
-            <Image src="/products.png" alt="Products" fill style={{ objectFit: 'cover' }} />
+            <Image src="/hydra_crane.jpeg" alt="Products" fill style={{ objectFit: 'cover' }} />
             <div className={styles.imgOverlay} />
           </div>
         </motion.div>

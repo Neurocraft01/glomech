@@ -94,7 +94,6 @@ export default function Hero() {
           {[
             { value: '960 MT', label: 'Annual Production', icon: <TrendingUp size={16} /> },
             { value: '40K sqft', label: 'Factory Area', icon: <Shield size={16} /> },
-            { value: '₹8.35Cr', label: 'FY25–26 Turnover', icon: <TrendingUp size={16} /> },
             { value: '10+', label: 'Years Experience', icon: <Shield size={16} /> },
           ].map((s, i) => (
             <div key={i} className={styles.statItem}>

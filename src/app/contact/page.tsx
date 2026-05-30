@@ -82,6 +82,7 @@ export default function ContactPage() {
               <div className={styles.infoText}>
                 <h4>Email Inquiries</h4>
                 <p>{companyInfo.contact.email}</p>
+                <p>info@glomech.in</p>
               </div>
             </div>
 

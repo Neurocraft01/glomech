@@ -13,7 +13,7 @@ const directors = [
     name: "Nilesh Nighot",
     role: "Director",
     credentials: "Mechanical Engineer | 25+ Years Experience in Production & Project Management",
-    photo: "/director_nilesh.png",
+    photo: "/director_Nilesh_Nighot.jpeg",
     message: "Our philosophy at Glomech Engineering is firmly rooted in a customer-first approach, where understanding project requirements in depth is the starting point of every successful execution. With over two decades of experience in production and project management, I strongly believe that timely delivery, clear communication, and dependable performance define long-term partnerships. We emphasize structured planning, efficient coordination, and proactive problem-solving to ensure seamless project flow from initiation to completion. Our systems are designed to deliver not just products, but complete reliability in execution. Looking ahead, we are focused on enhancing our project management practices, improving responsiveness, and building agile operations that can adapt to complex and large-scale industrial requirements.",
     tagline: "Delivering confidence through commitment, coordination, and customer focus.",
     initial: "NN",

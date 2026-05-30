@@ -1,5 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import PageHeader from '@/components/PageHeader';
@@ -11,12 +12,12 @@ export default function FacilitiesPage() {
   return (
     <main>
       <Navbar />
-      <PageHeader 
-        title="Our Facilities" 
+      <PageHeader
+        title="Our Facilities"
         subtitle="Modern infrastructure designed for precision and scale."
         image="/welding.png"
       />
-      
+
       <section className={styles.stats}>
         <div className={styles.statsGrid}>
           {[
@@ -24,7 +25,7 @@ export default function FacilitiesPage() {
             { val: "15,000", label: "SQ. FT. SHADED AREA" },
             { val: "13 M.T.", label: "HYDRA CRANE CAPACITY" }
           ].map((s, i) => (
-            <motion.div 
+            <motion.div
               key={i}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -46,7 +47,7 @@ export default function FacilitiesPage() {
         </div>
         <div className={styles.eqGrid}>
           {companyInfo.facilities.map((item, i) => (
-            <motion.div 
+            <motion.div
               key={i}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -61,9 +62,37 @@ export default function FacilitiesPage() {
         </div>
       </section>
 
+      <section className={styles.gallery}>
+        <div className="section-title">
+          <span className="badge">Infrastructure</span>
+          <h2>Factory & Machinery</h2>
+        </div>
+        <div className={styles.galleryGrid}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className={styles.galleryItem}
+          >
+            <Image src="/hydra_crane.jpeg" alt="Hydra Crane" width={1066} height={1600} className={styles.galleryImg} style={{ objectFit: 'contain', backgroundColor: 'var(--bg-offset)' }} />
+            <div className={styles.galleryCaption}>13 M.T. Capacity Hydra Crane</div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className={styles.galleryItem}
+          >
+            <Image src="/factory_image.jpeg" alt="Factory Exterior" width={800} height={500} className={styles.galleryImg} />
+            <div className={styles.galleryCaption}>40,000 Sq. Ft. Manufacturing Facility</div>
+          </motion.div>
+        </div>
+      </section>
+
       <section className={styles.quality}>
         <div className={styles.container}>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -79,7 +108,7 @@ export default function FacilitiesPage() {
               <li><Shield size={18} /> Third-party Quality Assurance</li>
             </ul>
           </motion.div>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}

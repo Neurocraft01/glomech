@@ -1,27 +1,22 @@
 'use client';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { companyInfo } from '@/data/company';
-import { useRef } from 'react';
 import styles from './Milestones.module.css';
 
 export default function Milestones() {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] });
-  const x = useTransform(scrollYProgress, [0, 1], ['5%', '-5%']);
-
   return (
-    <div ref={ref} className={styles.wrapper}>
+    <div className={styles.wrapper}>
       {/* section label */}
       <div className={styles.labelRow}>
         <span className="overline" style={{ color: 'rgba(255,255,255,0.4)' }}>Growth Trajectory</span>
         <span className={styles.subLabel}>Year-on-Year Excellence</span>
       </div>
 
-      {/* scrolling headline */}
+      {/* headline */}
       <div className={styles.headlineTrack}>
-        <motion.h2 className={styles.bigline} style={{ x }}>
-          Milestones &nbsp;&nbsp; · &nbsp;&nbsp; Milestones &nbsp;&nbsp; · &nbsp;&nbsp; Milestones
-        </motion.h2>
+        <h2 className={styles.bigline}>
+          Our Milestones
+        </h2>
       </div>
 
       {/* cards */}

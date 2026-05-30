@@ -36,7 +36,7 @@ export default function Products() {
           className={styles.imageCol}
         >
           <div className={styles.imageCard}>
-            <Image src="/products.png" alt="Industrial Products" fill style={{ objectFit: 'cover' }} />
+            <Image src="/productcover.jpeg" alt="Industrial Products" fill style={{ objectFit: 'cover' }} />
             <div className={styles.imageOverlay} />
             <div className={styles.floatBadge}>
               <span className={styles.floatNum}>960 MT</span>
@@ -63,7 +63,7 @@ export default function Products() {
               Steel solutions for every industrial challenge
             </h2>
             <p className={styles.desc}>
-              From light structural components to heavy prefabricated industrial sheds — 
+              From light structural components to heavy prefabricated industrial sheds —
               we manufacture to your exact drawings and specifications.
             </p>
           </motion.div>

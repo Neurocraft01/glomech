@@ -8,7 +8,7 @@ const features = [
     num: '01',
     icon: <ShieldCheck size={28} strokeWidth={1.5} />,
     title: "Precision Engineering",
-    description: "State-of-the-art machinery ensuring every cut and weld meets exact specifications with zero tolerance for error."
+    description: "Manufacturing heavy industrial fabrication components with exceptional accuracy and quality. Every cut, weld, and assembly is executed in accordance with approved drawings and specifications, ensuring reliable performance, dimensional precision, and consistent quality in every project."
   },
   {
     num: '02',

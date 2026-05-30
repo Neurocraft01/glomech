@@ -15,21 +15,24 @@ const productDetails = [
     image: "/product_structural.png",
     description: "Heavy and light structural steel fabrication including columns, beams, trusses, and frameworks. Manufactured as per client drawings and international standards such as IS, AISC, and BS.",
     specs: ["IS 2062 / IS 808 compliant", "All thickness ranges", "MIG & SAW welding", "NDT testing available"],
-    applications: "Industrial buildings, warehouses, power plants, refineries"
+    applications: "Industrial buildings, warehouses, power plants, refineries",
+    galleryImages: ["/structural_fabrication1.jpeg", "/structural_fabrication2.jpeg", "/structural_fabrication3.jpeg", "/structural_fabrication4.jpeg", "/structural_fabrication5.jpeg"]
   },
   {
     name: "Pipe Rack & Material Handling",
     image: "/product_piperack.png",
     description: "Custom fabricated pipe racks, pipe supports, and material handling structures for process plants. Engineered for heavy load-bearing with full traceability and third-party inspection.",
     specs: ["Multi-tier configurations", "Hot-dip galvanizing available", "Seismic-rated designs", "Modular construction"],
-    applications: "Oil & gas, petrochemical, fertilizer, and chemical plants"
+    applications: "Oil & gas, petrochemical, fertilizer, and chemical plants",
+    galleryImages: ["/pipe_rack_structure1.jpeg", "/pipe_rack_structure2.jpeg", "/pipe_rack_structure3.jpeg"]
   },
   {
     name: "Base Frames",
     image: "/product_baseframe.png",
     description: "Precision-machined and fabricated equipment base frames for pumps, compressors, motors, and other rotating machinery. Aligned and leveled to exact tolerances.",
     specs: ["Precision machining", "Grouting pockets", "All sizes & loads", "Vibration-dampening design"],
-    applications: "Pump sets, compressors, gearboxes, generators"
+    applications: "Pump sets, compressors, gearboxes, generators",
+    galleryImages: ["/baseframes.jpeg"]
   },
   {
     name: "Welded Gratings",
@@ -43,14 +46,16 @@ const productDetails = [
     image: "/product_staircase.png",
     description: "Industrial staircases and safety hand railings fabricated to IS 3696 standards. Designed for heavy-duty industrial environments with all surface finishing options.",
     specs: ["IS 3696 compliant", "Open & closed riser", "All handrail profiles", "Non-slip nosing"],
-    applications: "Industrial facilities, mezzanines, process plant access"
+    applications: "Industrial facilities, mezzanines, process plant access",
+    galleryImages: ["/Staircase_and_handrails.jpeg"]
   },
   {
     name: "Ducting & Storage Tanks",
     image: "/product_tank.png",
     description: "Custom fabricated industrial ducting systems and storage tanks for gases, liquids, and bulk materials. Designed for pressure and flow requirements with full weld testing.",
     specs: ["Pressure tested", "Various capacities", "Insulation-ready", "ASME/IS standards"],
-    applications: "Dust collection, ventilation, liquid storage, gas handling"
+    applications: "Dust collection, ventilation, liquid storage, gas handling",
+    galleryImages: ["/ducting_and_tank1.jpeg", "/ducting_and_tank2.jpeg"]
   },
   {
     name: "Chimney & Skids",
@@ -88,6 +93,7 @@ interface ProductDetail {
   description: string;
   specs: string[];
   applications: string;
+  galleryImages?: string[];
 }
 
 export default function ProductsPage() {
@@ -96,12 +102,12 @@ export default function ProductsPage() {
   return (
     <main>
       <Navbar />
-      <PageHeader 
-        title="Products & Services" 
+      <PageHeader
+        title="Products & Services"
         subtitle="Comprehensive fabrication solutions for diverse industrial needs."
-        image="/products.png"
+        image="/factory_image2.jpeg"
       />
-      
+
       <section className={styles.productGrid}>
         <div className="section-title">
           <span className="badge">Our Portfolio</span>
@@ -110,8 +116,8 @@ export default function ProductsPage() {
         </div>
         <div className={styles.grid}>
           {productDetails.map((product, i) => (
-            <motion.div 
-              key={i} 
+            <motion.div
+              key={i}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -184,7 +190,24 @@ export default function ProductsPage() {
                   <p>{selected.applications}</p>
                 </div>
 
-                <a href="/contact" className="btn-accent" style={{ marginTop: '8px' }}>
+                {selected.galleryImages && selected.galleryImages.length > 0 ? (
+                  <div className={styles.modalGallery} style={{ marginTop: '24px' }}>
+                    <h4>Additional Images</h4>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '16px', marginTop: '16px' }}>
+                      {selected.galleryImages.map((imgPath, idx) => (
+                        <div key={idx} style={{ aspectRatio: '1/1', position: 'relative', overflow: 'hidden', backgroundColor: 'rgba(0,0,0,0.05)', border: imgPath ? 'none' : '2px dashed rgba(0,0,0,0.2)', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                          {imgPath ? (
+                            <Image src={imgPath} alt={`${selected.name} ${idx + 1}`} fill style={{ objectFit: 'cover' }} />
+                          ) : (
+                            <span style={{ fontSize: '14px', color: 'rgba(0,0,0,0.4)', fontWeight: 600 }}>Image {idx + 1}</span>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ) : null}
+
+                <a href="/contact" className="btn-accent" style={{ marginTop: '24px' }}>
                   Request a Quote <ArrowRight size={16} />
                 </a>
               </div>
@@ -195,7 +218,7 @@ export default function ProductsPage() {
 
       <section className={styles.services}>
         <div className={styles.container}>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -213,7 +236,7 @@ export default function ProductsPage() {
               ))}
             </div>
           </motion.div>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
