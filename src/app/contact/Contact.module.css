@@ -40,6 +40,10 @@
   flex-shrink: 0;
 }
 
+.infoText {
+  min-width: 0;
+}
+
 .infoText h4 {
   margin-bottom: 8px;
   font-size: 1.1rem;
@@ -49,6 +53,7 @@
   color: var(--text-muted);
   font-size: 0.95rem;
   line-height: 1.5;
+  overflow-wrap: anywhere;
 }
 
 .mapLink {
@@ -121,6 +126,7 @@
 }
 
 .group input, .group select, .group textarea {
+  width: 100%;
   padding: 14px 18px;
   border-radius: 12px;
   border: 1px solid var(--border);
@@ -152,6 +158,11 @@
     grid-template-columns: 1fr;
   }
   
+  .infoCard {
+    padding: 24px 20px;
+    gap: 16px;
+  }
+
   .infoCard:hover {
     transform: none;
   }
